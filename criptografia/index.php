@@ -18,14 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 	// if para verificar se a senha foi enviada
 	if (empty($_POST['pswd']))
 	{
-		$error = "Please enter a password!";
+		$error = "ponha a senha, desgraça(／#`Д´)／!";
 		$valid = false;
 	}
 	
 	// elseif para verificar se o texto foi enviado
 	else if (empty($_POST['code']))
 	{
-		$error = "Please enter some text or code to encrypt or decrypt!";
+		$error = "ponha o texto, desgraça(／#`Д´)／!";
 		$valid = false;
 	}
 	
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		if (!ctype_alpha($_POST['pswd']))
 		{
-			$error = "Password should contain only alphabetical characters!";
+			$error = "seu retardado vc usou numero, desgraça(／#`Д´)／!";
 			$valid = false;
 		}
 	}
@@ -45,9 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 		// if para confirmar se o botao de criptografar for clickado
 		if (isset($_POST['encrypt']))
 		{	
-			$n=2;
 			$code = encrypt($pswd, $code);
-			$rotation = substr($text, $n) . substr($texto, 0, $n)
 			$error = "criptografado com sucesso!\(^o^)/";
 			$color = "#526F35";
 		}
@@ -55,9 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 		// if para verificar se o botao de descriptografar foi clickado
 		if (isset($_POST['decrypt']))
 		{
-			$n=2;
 			$code = decrypt($pswd, $code);
-			$rotation = substr($text, $n) . substr($texto, 0, $n)
 			$error = "descriptografado com suscesso!\(^o^)/";
 			$color = "#526F35";
 		}
